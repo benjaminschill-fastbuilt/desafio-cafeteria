@@ -1,0 +1,1 @@
+Esse é um sistema de gestão de cafeteria que criei para praticar as tecnologias usadas na FastBuilt com a finalidade de aprender e poder ajudar a equipe no desenvolvimento.
