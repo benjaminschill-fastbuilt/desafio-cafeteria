@@ -19,3 +19,19 @@ const formatarPreco = (preco) => {
 }
 
 console.log (formatarPreco(9.3));
+
+const bebidas = cardapio.filter((item) => item.categoria === "bebida");
+
+console.log(bebidas);
+
+const maiusculas = cardapio.map((item) => item.nome.toUpperCase());
+
+console.log(maiusculas);
+
+const resumoProduto = (produto) => { 
+    const { nome, preco } = produto; 
+    return `Produto: ${nome} - Valor: ${formatarPreco(preco)}`
+}
+
+console.log(resumoProduto(cardapio[1]));
+
