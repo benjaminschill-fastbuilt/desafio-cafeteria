@@ -35,3 +35,34 @@ const resumoProduto = (produto) => {
 
 console.log(resumoProduto(cardapio[1]));
 
+async function buscarEnderecoEntrega(CEP) {
+    const cepLimpo = String(CEP).replace(/\D/g, '');
+
+    try{
+        if (cepLimpo.length !== 8) { 
+            throw new Error('Formato de CEP inválido. Digite 8 números.');
+        }
+
+        const resposta = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
+
+        if (!resposta.ok) { 
+            throw new Error('Erro na requisição ao ViaCEP');
+        }
+
+        const dados = await resposta.json();
+
+    if (dados.erro) {
+      throw new Error('CEP não encontrado.');
+    }
+
+    return dados;
+    }
+    catch (erro) { 
+        console.error(`Falha ao buscar endereço: ${erro.message}`);
+        return null;
+    }
+}
+
+buscarEnderecoEntrega("89012-190").then((endereco) => { 
+    console.log(endereco);
+});
