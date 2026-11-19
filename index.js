@@ -7,3 +7,15 @@ const cardapio = [
 ];
 
 console.log(cardapio);
+
+const darBoasVindas = (nome) => { 
+    return `Olá, ${nome}! Bem vindo à cafeteria.`;
+}
+
+console.log(darBoasVindas("Benjamin"));
+
+const formatarPreco = (preco) => { 
+    return `R$ ${preco.toFixed(2).replace('.', ',')}`;
+}
+
+console.log (formatarPreco(9.3));
